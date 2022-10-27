@@ -1,0 +1,23 @@
+.container {
+  background-color: paleturquoise;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 50%;
+
+  & h1 {
+    padding-left: 50px;
+  }
+
+  & form {
+    background-color: white;
+    box-shadow: 7px 7px 0 #CCC;
+    border-radius: 20px;
+    padding: 50px;
+  }
+}
