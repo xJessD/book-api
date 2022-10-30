@@ -1,0 +1,6 @@
+@use '../../assets/scss/mixins';
+
+.NoResults {
+  @include mixins.box-style;
+  padding: 15px;
+}

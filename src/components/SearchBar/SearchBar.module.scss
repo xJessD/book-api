@@ -1,7 +1,32 @@
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/palette';
+@use '../../assets/scss/screens';
+
 .SearchBar {
-  background-color: rgba(white, 0.8);
-  box-shadow: 7px 7px 0 #CCC;
-  border-radius: 20px;
-  padding: 50px;
-  margin: 50px 0;
-}
+  @include mixins.flex-box();
+
+
+  & input, & button, & img {
+    all: unset;
+    height: 40px;
+  };
+
+  & input {
+    color: palette.$wintergreen-dream;
+    border-bottom: 2px solid palette.$wintergreen-dream;
+
+
+    @include screens.phone() { min-width: 200px; }
+    width: 300px;
+
+    &:focus {
+      color: palette.$msu-green;
+      border-bottom-color: palette.$msu-green; 
+    }
+  }
+
+  & button {
+    margin-left: 15px;
+  }
+
+};
