@@ -1,11 +1,14 @@
 import style from './App.module.scss'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import BookCard from './components/BookCard/BookCard';
 import BookList from './containers/BookList/BookList';
 import SearchBar from './components/SearchBar/SearchBar';
+import FlexBox from './containers/FlexBox/FlexBox';
+import BookContext from './components/BookContext/BookContext';
+
 
 function App() {
-
+  const [books, setBooks] = useState([]);
   
 
 
@@ -13,8 +16,12 @@ function App() {
     <div className={style.container}>
       <div className={style.content}>
         <h1>Google Books API</h1>
-        <SearchBar />
-        <BookList />
+        <BookContext.Provider value={[books, setBooks]}>
+          <SearchBar />
+          <FlexBox>
+            <BookList />
+          </FlexBox>
+        </BookContext.Provider>
       </div>
     </div>
   );
