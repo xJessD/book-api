@@ -1,67 +1,86 @@
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/palette';
+@use '../../assets/scss/screens';
+
+$transition-opacity: opacity .5s ease-in-out;
+$transition-transform: transform .5s ease-in-out;
+$desc-position: 120%;
+
+
 .BookCard {
-  background: rgba(white, .8);
-  box-shadow: 7px 7px 0 #CCC;
-  border-radius: 15px;
+  @include mixins.flex-box(row, center, center, nowrap);
+  @include mixins.box-style();
   width: 30%;
-  min-width: 250px;
+  min-width: 300px;
   height: 250px;
   margin: 10px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+
+  @include screens.phone() {
+      width: 100%;
+    }
+  @include screens.tablet-portrait() {
+      width: 100%;
+    }
+  @include screens.tablet-landscape() {
+      width: 80%;
+
+    }
 
   &__img {
-    justify-self: left;
     min-width: 25%;
     padding-left: 15px;
 
+    @include screens.phone() {
+      width: 50%;
+    }
+  
     & img {
       width: 100%;
     }
   }
 
   &__content {
-    width: 80%;
+    width: 90%;
     padding: 15px;
     height: 100%;
     overflow: hidden;
+
+    @include screens.phone() {
+      width: 50%;
+    }
+
   }
 
   &:hover .content__right {
-    transition: transform .4s ease-in-out;
-    transform: translateX(-120%);
+    transition: $transition-transform;
+    transform: translateX(-($desc-position));
   }
 
   &:hover .content__left {
-    transition: opacity .5s ease-in-out;
+    transition: $transition-opacity;
     opacity: 0;
   }
 }
 
 .content {
+  @include mixins.flex-box(row, center, flex-start, nowrap);
   position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
 
   &__left, &__right{
-    //padding: 10px;
+    @include mixins.flex-box(column, center, flex-start, nowrap);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 100%;
   }
 
   &__left {
-    transition: opacity .4s ease-in-out;
+    transition: $transition-opacity;
     z-index: 0;
   }
   &__right{
-    transition: transform .5s ease-in-out;
-    right: -120%;
+    transition: $transition-transform;
+    right: -($desc-position);
     top: -100%;
     z-index: 10;
 
@@ -71,5 +90,15 @@
 
       &::-webkit-scrollbar { width: 0; }
     }
+  }
+
+  &__title {
+    color: palette.$msu-green;
+  }
+
+  &__author {
+    margin-top: 10px;
+    font-style: italic;
+    color: palette.$deep-taupe; 
   }
 }

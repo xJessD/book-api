@@ -1,0 +1,47 @@
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/typography';
+@use '../../assets/scss/palette';
+@use '../../assets/scss/screens';
+
+$header-transition: color .3s ease;
+
+.Header {
+  @include mixins.flex-box(row, space-between, center, nowrap);
+  @include mixins.box-style();
+  padding: 50px;
+  margin: 50px 0;
+  
+
+  @include screens.phone() {
+    @include mixins.flex-box(column, center);
+    min-width: 450px;
+    padding: 30px;
+  }
+
+  @include screens.tablet-portrait() {
+    @include mixins.flex-box(column, center);
+    padding: 30px;
+  }
+
+  @include screens.tablet-landscape() {
+    @include mixins.flex-box($direction: row);
+  }
+
+
+
+  & h1 a {
+    @extend %bebas;
+    font-size: 55px;
+    letter-spacing: 2px;
+    color: palette.$msu-green;
+    text-decoration: none;
+    transition: $header-transition;
+    margin-right: 25px;
+
+    &:hover {
+      transition: $header-transition;
+      color: palette.$wintergreen-dream;
+    }
+  }
+}

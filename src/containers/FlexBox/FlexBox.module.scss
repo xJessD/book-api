@@ -1,6 +1,11 @@
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/screens';
+
 .FlexBox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  @include mixins.flex-box(row, space-evenly, center, wrap);
   width: 100%;
+
+  @include screens.phone() {
+    @include mixins.flex-box(row, center, center, wrap);
+  }
 }

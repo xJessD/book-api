@@ -1,0 +1,8 @@
+@use '../../assets/scss/palette';
+
+.CurrentResults {
+  height: 10px;
+  margin-top: 15px;
+  color: palette.$wintergreen-dream;
+  font-style: italic;
+}

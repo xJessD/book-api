@@ -1,0 +1,14 @@
+@use './variables';
+
+@mixin flex-box($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin box-style () {
+  background-color: variables.$white-background;
+  border-radius: variables.$border-radius;
+  box-shadow: variables.$box-shadow;
+}

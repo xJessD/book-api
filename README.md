@@ -1,11 +1,10 @@
 # Google Books API Search Engine
 
-## Outline
+## Intro
+[View it live here.]()
+This is a project to create a search page using the Google Books API. Some of the tools used have been React, React Router Dom, and SCSS.
 
 ## MVP
-
-Create a page that allows users to search for books
-
 ### UI
 
 ✅ Header container introducing the page 
@@ -22,14 +21,15 @@ Create a page that allows users to search for books
 
 ✅ Each book in the grid should have an image, author, title and description
 
-- The grid should be responsive on different screen sizes
+✅ The grid should be responsive on different screen sizes
 
 ✅ You should use async / await for your request code, NOT .then
 
 
 ### Styling (required):
 
-- You should separate DOM functions and non-DOM functions in different modules.
+✅ You should separate DOM functions and non-DOM functions in different modules.
+
 ✅ Think about which containers/components are responsible for what. As a general rule of thumb, containers process/collect data and create components that render that data
 
 ✅ Always use iterators over loops
@@ -45,3 +45,4 @@ Create a page that allows users to search for books
 ##  Resources:
 
 - [CSS Animated Background](https://codepen.io/hylobates-lar/pen/qBbQeON)
+- [Icons @ icons8](https://icons8.com/)
