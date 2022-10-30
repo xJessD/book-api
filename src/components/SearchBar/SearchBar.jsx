@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import BookContext from '../BookContext/BookContext';
+import style from './SearchBar.module.scss'
 
 const SearchBar = () => {
 
   const googleAPI = 'https://www.googleapis.com/books/v1/volumes?q=';
   const [search, setSearch] = useState('');
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useContext(BookContext);
   
   const searchQuery = async () => {
     const query = search.split(" ").join("+");
@@ -15,7 +17,7 @@ const SearchBar = () => {
     const json = await data.json();
     const items = json['items'];
     setBooks(items);
-    console.log(books);
+    //console.log(books);
   } 
 
   const onFormSubmit = async (event) => {
@@ -28,7 +30,7 @@ const SearchBar = () => {
   };
   
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className={style.SearchBar} onSubmit={onFormSubmit}>
     <input type='search' placeholder='Google' onChange={onInputChange} />
     <input type='submit' value='Search' />
   </form> 

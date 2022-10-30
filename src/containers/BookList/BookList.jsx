@@ -1,13 +1,21 @@
 import style from './BookList.module.scss';
 import BookCard from '../../components/BookCard/BookCard';
+import { useContext } from 'react';
+import BookContext from '../../components/BookContext/BookContext';
 
 
 
 const BookList = () => {
+const [books] = useContext(BookContext);
+
   return (
-    <div>
-      <BookCard />
-    </div>
+    <>
+    {
+      books.map(item => (
+        <BookCard id={item['id']} info={item['volumeInfo']} />
+      ))
+    }
+    </>
   )
 };
 
