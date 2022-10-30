@@ -7,10 +7,21 @@ const BookCard = (props) => {
 
   return (
     <div className={style.BookCard}>
-      <img src={imageLinks['thumbnail']} />
-      <h2>{authors}</h2>
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <div className={style.BookCard__img}>
+        { imageLinks ? <img src={imageLinks['thumbnail']} /> : null }
+      </div>
+
+      <div className={style.BookCard__content}>
+        <div className={style.content__left}>
+          <h2 className={style.content__title}>{title ? title : 'No title found'}</h2>
+          <h3>{authors ? authors : 'No author found'}</h3> 
+        </div>
+
+        <div className={style.content__right}>
+          <p>{description ? description : 'No description found'}</p>
+        </div>
+        
+      </div>
     </div>
   );
 };

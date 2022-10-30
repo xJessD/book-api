@@ -10,10 +10,9 @@ const [books] = useContext(BookContext);
 
   return (
     <>
-    {
-      books.map(item => (
+    { books ?  (books.map(item => (
         <BookCard id={item['id']} info={item['volumeInfo']} />
-      ))
+      ))) : `No books have been found. Try a different search?`
     }
     </>
   )

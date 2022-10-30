@@ -9,11 +9,16 @@ const SearchBar = () => {
   const [books, setBooks] = useContext(BookContext);
   
   const searchQuery = async () => {
-    const query = search.split(" ").join("+");
-    //console.log(query);
+
+    // Empty strings or all white spaces returns search for undefined
+    const query = (!search || search.trim().length === 0) ? 'undefined' : search.split(" ").join("+");
     const q = googleAPI+query;
-    //console.log(q);
-    const data = await fetch(q);
+    const data = await fetch(q).catch((error) => {
+      setBooks('Nothing Found');
+    });
+
+    console.log('Books:', books);
+
     const json = await data.json();
     const items = json['items'];
     setBooks(items);
