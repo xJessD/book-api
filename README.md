@@ -1,7 +1,9 @@
 # Google Books API Search Engine
+![Screenshot](/src/assets/Screenshot_106.png?raw=true "Site Preview")
 
 ## Intro
 [View it live here.](https://xjessd.github.io/book-api/)
+
 This is a project to create a search page using the Google Books API. Some of the tools used have been React, React Router Dom, and SCSS.
 
 ## MVP
