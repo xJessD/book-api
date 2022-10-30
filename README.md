@@ -39,6 +39,7 @@ Create a page that allows users to search for books
 ## Bonus (optional, but highly recommended):
 
 ✅ Give feedback to the user when no book results can be found for the query.
+
 - When a user clicks a book in the grid, a modal should appear with more book information, think about release, publish date, country, languages, etc.
 
 ##  Resources:

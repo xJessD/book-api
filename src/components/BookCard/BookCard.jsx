@@ -12,12 +12,12 @@ const BookCard = (props) => {
       </div>
 
       <div className={style.BookCard__content}>
-        <div className={style.content__left}>
+        <div className={[style.content, style.content__left].join(" ")}>
           <h2 className={style.content__title}>{title ? title : 'No title found'}</h2>
           <h3>{authors ? authors : 'No author found'}</h3> 
         </div>
 
-        <div className={style.content__right}>
+        <div className={[style.content, style.content__right].join(" ")}>
           <p>{description ? description : 'No description found'}</p>
         </div>
         
