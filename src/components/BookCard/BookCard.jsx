@@ -4,7 +4,6 @@ import thumbnail from '../../assets/icons8-book-64.png'
 const BookCard = (props) => {
   const {info} = props;
   const {authors, title, description, imageLinks} = info;
-  console.log(info);
 
   return (
     <div className={style.BookCard}>
