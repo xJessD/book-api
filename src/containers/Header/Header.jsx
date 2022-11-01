@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <div className={style.Header}>
-      <h1><a href="/">Book Search</a></h1>
+      <h1><a href="/book-api/">Book Search</a></h1>
       <SearchBar />
     </div>
     

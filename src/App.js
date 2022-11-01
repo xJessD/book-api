@@ -14,10 +14,10 @@ function App() {
     <div className={style.container}>
       <div className={style.content}>
         <BookContext.Provider value={[books, setBooks]}>
-          <BrowserRouter>
+          <BrowserRouter basename="/book-api">
             <Header/>
             <Routes>
-              <Route path='/'></Route>
+              <Route path='/book-api/'></Route>
               <Route path='/results' element={<Results />}></Route>
             </Routes>
             <Footer />
